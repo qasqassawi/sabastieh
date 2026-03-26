@@ -1,0 +1,132 @@
+:root {
+  /* Bakery Colors - Premium Palette */
+  --primary: #CC5500;
+  --primary-gradient: linear-gradient(135deg, #CC5500 0%, #FF8C00 100%);
+  --primary-hover: #b34a00;
+  --secondary: #3E2723; /* Deep Espresso */
+  --bg-color: #FCF7F0; /* Soft Cream */
+  --surface: #FFFFFF;
+  --surface-alt: #FDE6D5;
+  --text-main: #2D1B18;
+  --text-muted: #8D7773;
+  --border: #EBDACC;
+  --error: #D32F2F;
+  --success: #388E3C;
+  
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 10px 25px rgba(62, 39, 35, 0.1);
+  --shadow-lg: 0 20px 48px rgba(62, 39, 35, 0.15);
+  
+  --app-max-width: 480px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Tajawal', 'Cairo', sans-serif;
+  background-color: var(--bg-color); /* Match app background instead of beige */
+  color: var(--text-main);
+  direction: rtl;
+  line-height: 1.6;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#root {
+  width: 100%;
+  max-width: var(--app-max-width);
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  box-shadow: 0 0 40px rgba(0,0,0,0.05);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--secondary);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Base button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  font-family: 'Tajawal', sans-serif;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: var(--surface-alt);
+  color: var(--secondary);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: #eee0c9;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Card layout */
+.card {
+  background-color: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+/* Layout wrappers */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.main-content {
+  min-height: calc(100vh - 140px);
+}
